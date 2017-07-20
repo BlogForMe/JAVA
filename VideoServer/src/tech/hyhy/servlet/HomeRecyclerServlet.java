@@ -14,17 +14,20 @@ import org.apache.catalina.User;
 
 import com.google.gson.Gson;
 
+import tech.hyhy.bean.HomeRecycler;
 import tech.hyhy.bean.Student;
+import tech.hyhy.dao.HomeRecyclerDao;
 import tech.hyhy.dao.UserDao;
-@WebServlet(name = "DemoServlet", value = "/DemoServlet")
-public class DemoServlet extends HttpServlet {
+
+@WebServlet(name = "HomeRecycler", value = "/HomeRecycler")
+public class HomeRecyclerServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter out = resp.getWriter();
-		List<Student> sList = new UserDao().queryUser();
-        String sb = new Gson().toJson(sList,List.class);
-        out.println(sb);
+		List<HomeRecycler> sList = new HomeRecyclerDao().getHRecycler();
+		String sb = new Gson().toJson(sList, List.class);
+		out.println(sb);
 	}
 
 	@Override
@@ -33,6 +36,5 @@ public class DemoServlet extends HttpServlet {
 		super.doPost(req, resp);
 		doGet(req, resp);
 	}
-	
-	
+
 }
