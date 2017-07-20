@@ -21,8 +21,6 @@ public class DemoServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		resp.setHeader("Content-type", "text/html;charset=UTF-8");// 告知浏览器编码格式
-//		resp.setCharacterEncoding("UTF-8"); // 一般将字符编码设置成国际编码
 		PrintWriter out = resp.getWriter();
 		List<Student> sList = new UserDao().queryUser();
         String sb = new Gson().toJson(sList,List.class);
