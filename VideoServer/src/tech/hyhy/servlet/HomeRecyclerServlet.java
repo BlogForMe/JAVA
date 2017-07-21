@@ -2,6 +2,7 @@ package tech.hyhy.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -26,7 +27,16 @@ public class HomeRecyclerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		PrintWriter out = resp.getWriter();
 		List<HomeRecycler> sList = new HomeRecyclerDao().getHRecycler();
-		String sb = new Gson().toJson(sList, List.class);
+//		List<HomeRecycler> sList = null;
+
+		HashMap<String, Object> hm = new HashMap<>();
+		boolean flag = false;
+		if (sList != null) {
+			flag = true;
+		}
+		hm.put("state", flag);
+		hm.put("hmList", sList);
+		String sb = new Gson().toJson(hm);
 		out.println(sb);
 	}
 
