@@ -16,7 +16,7 @@ public class MariaDB {
 		try {
 			Class.forName(dbClassName);
 			Properties p = new Properties();
-			p.put("user", "root");
+			p.put("user", "user_name");
 			p.put("password", "123456");
 			c = DriverManager.getConnection(CONNECTION, p);
 			// Statement st = c.createStatement();
