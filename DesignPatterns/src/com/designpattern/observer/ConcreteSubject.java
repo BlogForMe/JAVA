@@ -21,7 +21,7 @@ public class ConcreteSubject implements Subject {
     }
 
     @Override
-    public void notifyOBservers(String str) {
+    public void notifyObservers(String str) {
         for (Observer observer : list) {
             observer.update(str);
         }

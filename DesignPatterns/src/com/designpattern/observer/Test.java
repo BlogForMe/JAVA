@@ -14,7 +14,7 @@ public class Test {
         //观察者订阅主题
         eatSubject.addObserver(p1);
         eatSubject.addObserver(p2);
-        eatSubject.notifyOBservers("起来敲代码啦！！！");
+        eatSubject.notifyObservers("起来敲代码啦！！！");
 
     }
 }
