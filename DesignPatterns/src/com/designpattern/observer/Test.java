@@ -2,6 +2,7 @@ package com.designpattern.observer;
 
 /**
  * Created by jon on 17-8-10.
+ * 这个观察者例子不好理解
  */
 public class Test {
     public static void main(String[] args) {
