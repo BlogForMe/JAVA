@@ -1,5 +1,7 @@
 package com.designpattern.adapter;
 
+import com.designpattern.adapter.object.Adapter;
+
 /**
  * Created by jon on 17-8-10.
  */
